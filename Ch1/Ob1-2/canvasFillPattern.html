@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Canvas</title>
+        <script>
+            window.onload = () => {
+                var drawingSurface = document.getElementById("drawingSurface");
+                var context = drawingSurface.getContext("2d");
+                
+                context.lineWidth = 3;
+                context.rect(150, 150, 200, 125);
+                var img = new Image();
+                img.src = "image_1.jpg";
+                img.onload = () => {
+                    var pattern = context.createPattern(img, "repeat");
+                    context.fillStyle = pattern;
+                    context.fill();
+                    context.stroke();
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="drawingSurface" height="400" width="600" style="border:1px solid black;">
+            Your browser does not support html5
+        </canvas>
+    </body>
+</html>

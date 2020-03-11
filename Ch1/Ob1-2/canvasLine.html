@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Canvas</title>
+        <script>
+            window.onload = () => {
+                var drawingSurface = document.getElementById("drawingSurface");
+                var context = drawingSurface.getContext("2d");
+                context.beginPath();
+                context.moveTo(10,10);
+                context.lineTo(225, 350);
+                context.lineTo(50, 50);
+                context.moveTo(400,50);
+                context.lineTo(400, 390);
+                context.lineWidth = "20";
+                context.strokeStyle = "rgb(0,255,0)";
+                context.lineCap = "round";
+                context.stroke();
+                console.log(context);
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="drawingSurface" height="400" width="600" style="border:1px solid black;">
+            Your browser does not support html5
+        </canvas>
+    </body>
+</html>

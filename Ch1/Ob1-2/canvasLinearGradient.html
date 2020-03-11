@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Canvas</title>
+        <script>
+            window.onload = () => {
+                var drawingSurface = document.getElementById("drawingSurface");
+                var context = drawingSurface.getContext("2d");
+                
+                context.rect(150, 150, 200, 125);
+                context.lineWidth = 3;
+                var gradient = context.createLinearGradient(150, 150, 200, 125);
+                gradient.addColorStop(0, "Black");
+                gradient.addColorStop(0.5, "Gray");
+                gradient.addColorStop(1, "Yellow");
+                // gradient.addColorStop(1.5, "Yellow"); >> value MUST be between 0 & 1. This will give an error
+                context.fillStyle = gradient;
+                context.fill();
+                context.stroke();
+
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="drawingSurface" height="400" width="600" style="border:1px solid black;">
+            Your browser does not support html5
+        </canvas>
+    </body>
+</html>
